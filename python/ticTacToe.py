@@ -58,12 +58,12 @@ while moves < 9:
         player2 = input("> ")
         column = player2[0].lower()
         row = int(player2[1])
-        case = board[-(ord(column)-95-1)][row-1]
+        case = board[-(ord(column)-96)][row-1]
         if case!= ' ':
             print("please play in an empty square.")
             moves-=1
         else:
-            board[-(ord(column)-95-1)][row-1] = "o"
+            board[-(ord(column)-96)][row-1] = "o"
             if connected(board):
                 showBoard(board)
                 print("Player 2 won.")
