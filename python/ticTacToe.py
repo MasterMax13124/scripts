@@ -40,6 +40,9 @@ while moves < 9:
     if moves % 2 == 0:
         print("Player 1's turn.")
         player1 = input("> ")
+        if player1 == "quit":
+            print("good bye.")
+            break
         column = player1[0].lower()
         row = int(player1[1])
         case = board[-(ord(column)-96)][row-1] 
@@ -56,6 +59,9 @@ while moves < 9:
     else:
         print("Player 2's turn.")
         player2 = input("> ")
+        if player2 == "quit":
+            print("good bye.")
+            break
         column = player2[0].lower()
         row = int(player2[1])
         case = board[-(ord(column)-96)][row-1]
