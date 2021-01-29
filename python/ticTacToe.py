@@ -38,7 +38,7 @@ moves = 0
 while moves < 9:
     showBoard(board)
     if moves % 2 == 0:
-        print("Player 1 turn.")
+        print("Player 1's turn.")
         player1 = input("> ")
         column = player1[0].lower()
         row = int(player1[1])
@@ -54,7 +54,7 @@ while moves < 9:
                 break
 
     else:
-        print("Player 2 turn.")
+        print("Player 2's turn.")
         player2 = input("> ")
         column = player2[0].lower()
         row = int(player2[1])
