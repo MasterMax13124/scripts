@@ -33,8 +33,9 @@ print("\nWelcome to another random tic tac toe. \nPlease use the following synta
 board = [[" "," "," "],
         [" "," "," "],
         [" "," "," "]]
+moves = 0
 
-for moves in range(9):
+while moves < 9:
     showBoard(board)
     if moves % 2 == 0:
         print("Player 1's turn.")
@@ -73,3 +74,4 @@ for moves in range(9):
                 showBoard(board)
                 print("Player 2 won.")
                 break
+    moves += 1
