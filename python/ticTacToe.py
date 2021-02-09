@@ -57,7 +57,7 @@ def twoPlayers(board):
             else:
                 board[-(ord(column)-96)][row-1] = "o"
 
-        #veryfing if someone won
+        #verifying if anyone won
         if connected("x",board):
             showBoard(board)
             print("Player 1 won")
