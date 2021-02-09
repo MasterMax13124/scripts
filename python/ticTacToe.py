@@ -4,18 +4,18 @@ from random import randint
 def connected(letter,board):
     for i in range(3):
         #horizontal  
-        if ( board[i][0] == letter )  and ( board[i][1] == letter ) and ( board[i][2] == letter ):
+        if ( board[i][0], board[i][1], board[i][2] )  == ( letter, letter, letter ):
             return True
         #vertical
-        elif ( board[0][i] == letter ) and ( board[1][i] == letter ) and ( board[2][i] == letter ):
+        elif ( board[0][i],  board[1][i], board[2][i] ) == ( letter, letter, letter ):
             return True
 
     # bottom left corner to up right corner
-    if ( board[2][0] == letter ) and ( board[1][1] == letter ) and ( board[0][2] == letter ):
+    if ( board[2][0],  board[1][1], board[0][2] ) == (letter, letter, letter ):
         return True
 
     #top left corner to down right corner
-    elif ( board[0][0] == letter ) and ( board[1][1] == letter ) and ( board[2][2] == letter ):
+    elif ( board[0][0], board[1][1], board[2][2] ) == (letter, letter, letter ):
         return True
 
 def showBoard(board):
@@ -68,7 +68,7 @@ def twoPlayers(board):
             break
         moves += 1
 
-# fake IA, just ranodm moves 
+# fake AI, just ranodm moves 
 def singlePlayer(board):
     moves = 0
     while moves < 5:
@@ -101,7 +101,7 @@ def singlePlayer(board):
 
         if connected("o",board):
             showBoard(board)
-            print("The fake IA won :(")
+            print("The fake AI won :(")
             break 
 
         moves +=1 
@@ -124,6 +124,7 @@ def main():
         twoPlayers(board)
     
 main()
+
     
     
 
