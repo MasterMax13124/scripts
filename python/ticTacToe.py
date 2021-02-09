@@ -84,6 +84,7 @@ def singlePlayer(board):
         if case!=' ':
             print("please play in an empty square.")
             moves-=1
+            continue
         else:
             board[-(ord(column)-96)][row-1] = "x"
 
@@ -94,7 +95,7 @@ def singlePlayer(board):
 
         #random oppenent moves
         x,y = randint(0,2), randint(0,2)
-        while board[x][y] == "x" or board[x][y] == "o":
+        while board[x][y] in ("o", "x"):
             x,y = randint(0,2), randint(0,2)
         board[x][y] = "o"
 
