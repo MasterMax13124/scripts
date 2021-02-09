@@ -118,12 +118,12 @@ def main():
     
     print("\nWelcome to another random tic tac toe. \nPlease use the following syntax to play \"LetterNumber\", example: b2\nEnjoy! (:")
     
-    mod = input("What mod do you want to play? Single (s) or two players? (t) : ")
-    while mod != "s" and mod != "t":
-        mod = input("What mod do you want to play? Single (s) or two players? (t) : ")
-        if mod != 's' and mod != 't':
+    mode = input("What mode do you want to play? Single (s) or two players? (t) : ")
+    while mode != "s" and mode != "t":
+        mode = input("What mode do you want to play? Single (s) or two players? (t) : ")
+        if mode != 's' and mode != 't':
             print('please insert either "s" or "t"')
-    if mod == "s":
+    if mode == "s":
         singlePlayer(board)
     else:
         twoPlayers(board)
