@@ -1,26 +1,21 @@
 #!/usr/bin/env python
 from random import randint
 
-def horizontalWin(letter,board):
+def connected(letter,board):
     for i in range(3):
+        #horizontal  
         if ( board[i][0] == letter )  and ( board[i][1] == letter ) and ( board[i][2] == letter ):
             return True
-
-def verticalWin(letter,board):
-    for i in range(3):
-        if ( board[0][i] == letter ) and ( board[1][i] == letter ) and ( board[2][i] == letter ):
+        #vertical
+        elif ( board[0][i] == letter ) and ( board[1][i] == letter ) and ( board[2][i] == letter ):
             return True
 
-def diagonal(letter,board):
-    #bottom left corner to up right corner
+    # bottom left corner to up right corner
     if ( board[2][0] == letter ) and ( board[1][1] == letter ) and ( board[0][2] == letter ):
         return True
+
     #top left corner to down right corner
     elif ( board[0][0] == letter ) and ( board[1][1] == letter ) and ( board[2][2] == letter ):
-        return True
-
-def connected(letter, board):
-    if horizontalWin(letter, board) or verticalWin(letter, board) or diagonal(letter, board):
         return True
 
 def showBoard(board):
@@ -29,7 +24,6 @@ def showBoard(board):
         print(chr(99-i), " | ", board[i][0], " | ", board[i][1], " | ", board[i][2], " | ")
         print("  "," -"*9)
     print(" "*5, "1", " "*3, "2", " "*3, "3","\n")
-
 
 def twoPlayers(board):
     moves = 0
@@ -118,12 +112,12 @@ def main():
     
     print("\nWelcome to another random tic tac toe. \nPlease use the following syntax to play \"LetterNumber\", example: b2\nEnjoy! (:")
     
-    mode = input("What mode do you want to play? Single (s) or two players? (t) : ")
-    while mode != "s" and mode != "t":
-        mode = input("What mode do you want to play? Single (s) or two players? (t) : ")
-        if mode != 's' and mode != 't':
+    mod = input("What mod do you want to play? Single (s) or two players? (t) : ")
+    while mod != "s" and mod != "t":
+        mod = input("What mod do you want to play? Single (s) or two players? (t) : ")
+        if mod != 's' and mod != 't':
             print('please insert either "s" or "t"')
-    if mode == "s":
+    if mod == "s":
         singlePlayer(board)
     else:
         twoPlayers(board)
@@ -131,4 +125,5 @@ def main():
 main()
     
     
+
 
