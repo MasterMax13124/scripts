@@ -124,8 +124,3 @@ def main():
         twoPlayers(board)
     
 main()
-
-    
-    
-
-
