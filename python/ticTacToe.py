@@ -122,5 +122,6 @@ def main():
         singlePlayer(board)
     else:
         twoPlayers(board)
-    
-main()
+        
+if __name__ == '__main__':
+    main()
